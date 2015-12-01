@@ -1,0 +1,27 @@
+{
+  "id": "postgresnode",
+  "cpus": 1,
+  "mem": 1024.0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "postgres",
+      "network": "BRIDGE",
+      "parameters": [
+        { "key": "hostname", "value": "postgresnode" },
+        { "key": "volume-driver", "value": "glusterfs" },
+        { "key": "volume", "value": "gfsvol:/gfs" }
+
+      ],
+      "portMappings": [
+        { "containerPort": 5432, "hostPort": 5432, "protocol": "tcp" }
+      ]
+    }
+  },
+  "env": {
+    "PGDATA": "/gfs/node/postgresnode/postgresql/data",
+    "POSTGRES_USER": "pgadmin",
+    "POSTGRES_PASSWORD": "postgresnodefoofoo"
+  }
+}

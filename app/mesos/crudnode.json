@@ -1,0 +1,26 @@
+{
+  "id": "crudnode",
+  "cpus": 0.5,
+  "mem": 512.0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "jmspring/nt3",
+      "network": "BRIDGE",
+      "parameters": [
+        { "key": "hostname", "value": "crudnode" }
+      ],
+      "portMappings": [
+        { "containerPort": 8080, "hostPort": 8080, "protocol": "tcp" }
+      ]
+    }
+  },
+  "env": {
+    "DBUSER": "pgadmin",
+    "DBPASSWORD": "postgresnodefoofoo",
+    "DBHOST": "postgresnode.marathon.mesos",
+    "DBPORT": "5432",
+    "DBNAME": "kv"
+  }
+}

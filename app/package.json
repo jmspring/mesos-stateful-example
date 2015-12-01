@@ -1,0 +1,12 @@
+{
+  "name": "postgres-crud",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A simple webservice for CRUD apps in Postgres",
+  "author": "Jim Spring <jmspring@gmail.com>",
+  "dependencies": {
+    "express": "~4.*",
+    "pg": "*",
+    "body-parser": "~1.0.1"
+  }
+}
